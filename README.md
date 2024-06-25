@@ -29,7 +29,9 @@ The main objectives of this project are to:
 - **GitHub:** For version control and collaboration.
 
 ## Data Cleaning Steps
-### 1. Standardise Date Format
+### 1. Standardise Date Format 📅
+Ensured that all date values are in a consistent format to facilitate accurate sorting and analysis.
+
 
 ```sql
 SELECT 
@@ -52,7 +54,8 @@ UPDATE NashvilleHousing
 SET SaleDateConverted = CONVERT(Date, SaleDate)
 ```
 
-### 2. Populate Property Address data
+### 2. Populate Property Address Data 🏡
+Filled in missing property address data to ensure that each record contains complete and accurate location information.
 ```sql
 SELECT *
 FROM 
@@ -92,7 +95,8 @@ WHERE
     a.PropertyAddress is null
 ```
 
-### 3. Breaking out Address into Individual Columns (Address, City, State)
+### 3. Breaking out Address into Individual Columns (Address, City, State) 🏙️
+Separated the full address into individual columns for Address, City, and State to improve data organisation and accessibility.
 ```sql
 ------ Spliting Address and City from PropertyAddress column by using Substring 
 
@@ -160,7 +164,8 @@ UPDATE NashvilleHousing
 SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress, ',', '.'), 1)
 ```
 
-### 4. Change Y and N to Yes and No in "SoldAsVacant" Column
+### 4. Change Y and N to Yes and No in "SoldAsVacant" Column ✔️✖️
+Converted binary values (Y/N) to more descriptive values (Yes/No) for better clarity and understanding.
 ```sql
 SELECT 
     Distinct(SoldAsVacant),
@@ -192,7 +197,8 @@ SET SoldAsVacant = CASE WHEN SoldAsVacant = 'Y' THEN 'Yes'
 ```
 
 
-### 5. Remove Duplicates 
+### 5. Remove Duplicates 🗑️
+Eliminated duplicate records to ensure that each entry in the dataset is unique and to prevent skewed analysis results.
 
 ```sql
 WITH RowNumCTE AS(
@@ -219,7 +225,8 @@ ORDER BY PropertyAddress
 ```
 
 
-### 6. Delete Unused Columns
+### 6. Delete Unused Columns 🚮
+Removed columns that were not relevant to the analysis to streamline the dataset and improve processing efficiency.
 
 ```sql
 SELECT *
@@ -242,7 +249,7 @@ Throughout this project, I gained a deeper understanding of:
 - The importance of data cleaning in the data analysis workflow.
 - Various SQL techniques for cleaning and preprocessing data.
 - Best practices for ensuring data quality and integrity.
-- Efficiently using SQL Server Management Studio for managing and cleaning data.
+- Efficiently using Azure Data Studio for managing and cleaning data.
 
 
 ## Conclusion
