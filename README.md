@@ -22,9 +22,9 @@ The main objectives of this project are to:
 - Ensure data integrity and accuracy.
 
 
-## Tools Used
+## Tools I Used
 - **SQL:** The primary language used for data cleaning operations.
-- **Docker:** For containerizing the SQL database.
+- **Docker:** For containerising the SQL database.
 - **Azure Data Studio:** My preferred tool for database management and executing SQL queries.
 - **GitHub:** For version control and collaboration.
 
